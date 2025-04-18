@@ -6,6 +6,9 @@ import smtplib
 from email.message import EmailMessage
 
 app = Flask(__name__)
+@app.route('/')
+def home():
+    return "✅ ICF GPT Backend is running."
 CORS(app)
 
 openai.api_key = "your-openai-api-key"
