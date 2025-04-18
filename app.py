@@ -24,9 +24,10 @@ def send_email_report(email, report):
     msg['Subject'] = 'ICF Disability Report'
     msg['From'] = 'your@email.com'
     msg['To'] = email
-    msg.set_content(f"Here is your ICF report:
+    msg.set_content(f"""Here is your ICF report:
 
-{report}")
+{report}
+""")
     with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
         smtp.starttls()
         smtp.login('your@email.com', 'your-email-password')
